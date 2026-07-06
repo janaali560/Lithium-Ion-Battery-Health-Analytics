@@ -36,5 +36,26 @@ To ensure full reproducibility of the analytical results, verify your local envi
 ### 📦 Installation
 Initialize your virtual environment and install all dependencies via `pip`:
 
+## 📅 3. Dataset Configuration & Data Collection
+
+To optimize repository performance and maintain efficient storage boundaries, **the raw source data files are completely excluded from this public repository**. The data engineering pipeline is entirely configured to parse and clean local data directories out-of-the-box.
+
+### 📥 Where to Source the Data
+The study utilizes raw telemetry files from the baseline **NASA Prognostics Center of Excellence Battery Dataset (B0005)**. 
+* **Download Source:** [Kaggle NASA Battery Dataset Mirror](https://www.kaggle.com/datasets/patrickfleith/nasa-battery-dataset)
+* **Required Files:** You must download `metadata.csv` and the accompanying zipped directory containing all individual telemetry files (`00001.csv` through `07565.csv`).
+
+### 📂 Target Directory Workspace
+For the execution environment to access the data streams seamlessly, your local folder architecture must be organized exactly as shown below:
+
+```text
+├── Confrence_letter.ipynb     # Your main deployment notebook
+├── metadata.csv                # NASA chronological structural guide index
+├── 00001.csv                   # Raw telemetry file 1 (Local only)
+├── 00002.csv                   # Raw telemetry file 2 (Local only)
+└── 07565.csv                   # Raw telemetry file 7565 (Local only)
+
+
+
 ```bash
 pip install numpy pandas matplotlib seaborn scikit-learn
